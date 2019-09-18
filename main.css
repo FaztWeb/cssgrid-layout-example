@@ -1,0 +1,116 @@
+/* General Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* background-color: #ecf0f1; */
+    background: radial-gradient(black 3px, transparent 4px), radial-gradient(black 3px, transparent 4px), linear-gradient(#fff 4px, transparent 0), linear-gradient(45deg, transparent 74px, transparent 75px, #a4a4a4 75px, #a4a4a4 76px, transparent 77px, transparent 109px), linear-gradient(-45deg, transparent 75px, transparent 76px, #a4a4a4 76px, #a4a4a4 77px, transparent 78px, transparent 109px), #fff;
+    background-size: 109px 109px, 109px 109px, 100% 6px, 109px 109px, 109px 109px;
+    background-position: 54px 55px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
+    color: #000000;
+    font-family: 'Manjari', sans-serif;
+}
+
+/* HEADER */
+
+.title h1 {
+    padding: 20px 0;
+    text-align: center;
+    font-size: 2.9em;
+    text-transform: uppercase;
+}
+
+/* CONTAINER */
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 1.6em auto;
+    display: grid;
+    gap: 1.6em;
+    /* grid-template-columns: repeat(4, 1fr) 3%; */
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.container>.header, .container>.content, .container>.sidebar, .container>.footer, .container>div {
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #000000;
+}
+
+.container>.header, .container>.footer {
+    grid-column: 1/-1;
+    background-color: #1e272e;
+    color: #ffffff;
+}
+
+.container>.content {
+    grid-column: span 3;
+    grid-row: span 4;
+}
+
+.content>.article {
+    background: #808e9b;
+    padding: 20px;
+    margin-top: 5px;
+    color: #dfe6e9
+}
+
+.content .article h1,
+.content .article p {
+    padding: 10px;
+}
+
+.container>.sidebar {
+    grid-column: span 2;
+    grid-row: span 4;
+    background: #485460;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .sidebar img {
+    display: block;
+    width: 100%;
+    margin-top: 5px;
+}
+
+.container>.related-post {
+    background: #2d3436;
+    color: #ffffff;
+    height: 180px;
+    ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease;
+}
+
+.container>.related-post:hover {
+    cursor: pointer;
+    color: #000000;
+    background: #ffffff;
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 768px) {
+    .header {
+        text-align: center;
+    }
+    .container .content {
+        grid-column: 1 / -1;
+    }
+    .container .sidebar {
+        grid-column: 1 / 6;
+    }
+
+    .container .related-post {
+        grid-column: 1/-1;
+    }
+}
